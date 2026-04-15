@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Musik Kelas 6 - SDN 60 Prabumulih</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0fdf4;
+            scroll-behavior: smooth;
+        }
+        .correct {
+            background-color: #22c55e !important; 
+            color: white !important;
+            border-color: #16a34a !important;
+        }
+        .wrong {
+            background-color: #ef4444 !important; 
+            color: white !important;
+            border-color: #dc2626 !important;
+        }
+        .disabled {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 10px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 10px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Style khusus untuk pencetakan (Print) agar berwarna dan rapi */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1.5cm;
+            }
+            body {
+                background-color: white !important;
+                -webkit-print-color-adjust: exact !important; /* Memaksa browser mencetak warna */
+                print-color-adjust: exact !important;
+            }
+            /* Sembunyikan semua elemen kecuali tabel rekap */
+            header, #materi, #kuis, footer, button, .modal, #cloud-status {
+                display: none !important;
+            }
+            /* Menyesuaikan tampilan rekap khusus untuk kertas */
+            #rekap {
+                display: block !important;
+                position: relative !important;
+                width: 100% !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .overflow-x-auto {
+                overflow: visible !important;
+            }
+            /* Mempertegas garis tabel agar rapi saat dicetak */
+            table {
+                width: 100% !important;
+                border-collapse: collapse !important;
+            }
+            th, td {
+                border: 1px solid #cbd5e1 !important;
+            }
+            th {
+                background-color: #dbeafe !important; /* bg-blue-100 */
+                color: #1e40af !important; /* text-blue-800 */
+            }
+            h2 {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-green-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold">🎵 Seni Musik Kelas 6</h1>
+                <p class="text-green-100 text-sm">SD Negeri 60 Prabumulih - Semester Genap (Kurikulum Merdeka)</p>
+            </div>
+            <div class="mt-4 md:mt-0 flex flex-wrap gap-4 items-center">
+                <div id="cloud-status" class="bg-green-800 text-green-200 px-3 py-1 rounded-full text-xs font-bold flex items-center shadow-inner">
+                    ☁️ Menghubungkan...
+                </div>
+                <a href="#materi" class="bg-green-500 hover:bg-green-400 px-4 py-2 rounded-full font-semibold transition text-sm">Materi</a>
+                <a href="#kuis" class="bg-yellow-400 text-green-900 hover:bg-yellow-300 px-4 py-2 rounded-full font-semibold transition text-sm">Kuis Interaktif</a>
+                <a href="#rekap" class="bg-blue-500 hover:bg-blue-400 px-4 py-2 rounded-full font-semibold transition text-white text-sm">Rekap Nilai</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        
+        <!-- SECTION MATERI -->
+        <section id="materi" class="bg-white rounded-2xl shadow-xl p-8 mb-12 border-t-8 border-yellow-400">
+            <h2 class="text-3xl font-bold text-green-700 mb-6 text-center">📖 Rangkuman Materi Pembelajaran</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Tangga Nada -->
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">🎼 1. Tangga Nada Diatonis</h3>
+                    <p class="mb-4">Tangga nada diatonis adalah tangga nada yang memiliki <strong>7 nada pokok</strong> (Do, Re, Mi, Fa, Sol, La, Si).</p>
+                    
+                    <h4 class="font-bold text-blue-700">A. Diatonis Mayor</h4>
+                    <ul class="list-disc ml-5 mb-4 text-sm space-y-1">
+                        <li><strong>Interval (Jarak Nada):</strong> 1 - 1 - ½ - 1 - 1 - 1 - ½</li>
+                        <li><strong>Ciri-ciri:</strong> Bersifat riang gembira, bersemangat.</li>
+                        <li><strong>Awal/Akhir:</strong> Biasanya diawali dan diakhiri nada <strong>Do</strong>.</li>
+                        <li><strong>Contoh Lagu:</strong> Hari Merdeka, Garuda Pancasila, Maju Tak Gentar.</li>
+                    </ul>
+
+                    <h4 class="font-bold text-blue-700">B. Diatonis Minor</h4>
+                    <ul class="list-disc ml-5 text-sm space-y-1">
+                        <li><strong>Interval (Jarak Nada):</strong> 1 - ½ - 1 - 1 - ½ - 1 - 1</li>
+                        <li><strong>Ciri-ciri:</strong> Bersifat sedih, kurang bersemangat, syahdu.</li>
+                        <li><strong>Awal/Akhir:</strong> Biasanya diawali dan diakhiri nada <strong>La</strong>.</li>
+                        <li><strong>Contoh Lagu:</strong> Syukur, Mengheningkan Cipta, Gugur Bunga.</li>
+                    </ul>
+                </div>
+
+                <!-- Alat Musik -->
+                <div class="bg-purple-50 p-6 rounded-xl border border-purple-200">
+                    <h3 class="text-xl font-bold text-purple-800 mb-4 flex items-center">🎹 2. Alat Musik Melodis</h3>
+                    <p class="mb-4">Alat musik melodis adalah alat musik yang bernada dan dapat menghasilkan melodi lagu.</p>
+                    
+                    <h4 class="font-bold text-purple-700">A. Pianika</h4>
+                    <ul class="list-disc ml-5 mb-4 text-sm space-y-1">
+                        <li>Dimainkan dengan cara <strong>ditiup dan ditekan</strong>.</li>
+                        <li>Tuts putih untuk nada asli pokok, tuts hitam untuk nada kromatis (kres/mol).</li>
+                        <li>Penjarian menggunakan tangan kanan (5 jari). Ibu jari (jari 1) biasanya untuk nada Do, telunjuk (jari 2) untuk Re, dst.</li>
+                    </ul>
+
+                    <h4 class="font-bold text-purple-700">B. Recorder (Suling Lurus)</h4>
+                    <ul class="list-disc ml-5 text-sm space-y-1">
+                        <li>Dimainkan dengan cara <strong>ditiup</strong>.</li>
+                        <li><strong>Posisi Tangan:</strong> Tangan KIRI di bagian ATAS, tangan KANAN di bagian BAWAH.</li>
+                        <li><strong>Teknik Meniup:</strong> Ditiup dengan lembut dan rata agar suara jernih (tidak pecah).</li>
+                        <li>Lubang harus ditutup rapat sempurna dengan ujung jari/daging jari agar nada tidak sumbang.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION KUIS -->
+        <section id="kuis" class="bg-white rounded-2xl shadow-xl p-8 mb-12 border-t-8 border-green-500 min-h-[80vh]">
+            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                <h2 class="text-3xl font-bold text-green-700">🎮 Kuis Interaktif</h2>
+            </div>
+
+            <!-- LAYAR PEMILIHAN SISWA -->
+            <div id="setup-screen" class="text-center py-12">
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">Pilih Nama Siswa untuk Memulai Kuis</h3>
+                <p class="text-gray-500 mb-8">Setiap siswa mendapat 10 soal acak. <br> <span class="text-red-500 font-bold">*Siswa Remedial akan otomatis mendapat soal yang berbeda.</span></p>
+                
+                <select id="student-select" class="block w-full max-w-lg mx-auto p-4 text-xl border-4 border-green-300 rounded-xl focus:outline-none focus:border-green-600 mb-8 bg-green-50 cursor-pointer">
+                    <option value="" disabled selected>-- Pilih Nama Siswa --</option>
+                    <!-- Options akan diisi via JS -->
+                </select>
+
+                <button onclick="window.startQuiz()" class="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-full font-bold text-2xl shadow-lg transition transform hover:scale-105">
+                    Mulai Kuis Sekarang! 🚀
+                </button>
+            </div>
+
+            <!-- LAYAR KUIS AKTIF -->
+            <div id="quiz-screen" class="hidden">
+                <div class="grid lg:grid-cols-3 gap-8 relative items-start">
+                    
+                    <!-- Kolom Kiri: Daftar Soal -->
+                    <div class="lg:col-span-2 space-y-8 h-[75vh] overflow-y-auto custom-scroll pr-4 pb-20" id="quiz-container">
+                        <!-- Pertanyaan akan di-generate di sini -->
+                    </div>
+
+                    <!-- Kolom Kanan: Papan Skor Sticky -->
+                    <div class="lg:col-span-1 sticky top-24">
+                        <div class="bg-blue-50 p-6 rounded-2xl shadow-xl border-t-8 border-blue-500 relative overflow-hidden">
+                            <!-- Indikator Remedial -->
+                            <div id="remedial-badge" class="hidden absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                                SOAL BARU REMEDIAL
+                            </div>
+                            
+                            <h3 class="text-lg text-gray-500 font-semibold mb-1">Peserta Kuis:</h3>
+                            <h2 id="active-student-name" class="text-2xl font-bold text-blue-800 mb-6 uppercase border-b-2 border-blue-200 pb-4">NAMA SISWA</h2>
+                            
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                                    <span class="font-bold text-gray-600">Soal Terjawab:</span>
+                                    <span id="answered-count" class="font-bold text-xl text-blue-600">0 / 10</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-green-100 p-3 rounded-lg border border-green-300 shadow-sm">
+                                    <span class="font-bold text-green-700">Jawaban Benar:</span>
+                                    <span id="score-benar" class="font-bold text-2xl text-green-600">0</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-red-100 p-3 rounded-lg border border-red-300 shadow-sm">
+                                    <span class="font-bold text-red-700">Jawaban Salah:</span>
+                                    <span id="score-salah" class="font-bold text-2xl text-red-600">0</span>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-6 pt-6 border-t-2 border-gray-200">
+                                <p class="text-gray-500 font-bold mb-1">TOTAL SKOR</p>
+                                <div id="score-total" class="text-6xl font-extrabold text-blue-600 mb-4 transition-all duration-300">0</div>
+                                
+                                <div id="status-container" class="hidden py-3 px-4 rounded-xl font-bold text-2xl shadow-inner mt-4 animate-bounce">
+                                    <span id="status-text">TUNTAS</span>
+                                </div>
+                            </div>
+
+                            <button onclick="window.resetApp()" class="w-full mt-8 bg-gray-200 hover:bg-green-500 hover:text-white text-gray-700 px-4 py-3 rounded-xl font-bold transition shadow-md">
+                                🔄 Selesai & Lihat Rekap
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECTION REKAP NILAI -->
+        <section id="rekap" class="bg-white rounded-2xl shadow-xl p-8 border-t-8 border-blue-500">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b pb-4 gap-4">
+                <h2 class="text-3xl font-bold text-blue-700">📊 Rekap Kelas (Tersimpan Otomatis)</h2>
+                <div class="flex gap-2">
+                    <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold shadow transition flex items-center">
+                        🖨️ Cetak
+                    </button>
+                    <button onclick="window.openConfirmClear()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-bold shadow transition flex items-center">
+                        🗑️ Kosongkan Data
+                    </button>
+                </div>
+            </div>
+            
+            <p class="text-gray-500 mb-6 text-sm">Nilai akan otomatis masuk setelah kuis selesai. <strong class="text-red-500">Klik nama siswa di tabel untuk langsung mengulang kuis (Remedial).</strong></p>
+
+            <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+                <table class="w-full text-left border-collapse bg-white">
+                    <thead>
+                        <tr class="bg-blue-100 text-blue-800 uppercase text-sm leading-normal print:bg-blue-100 print:text-blue-800">
+                            <th class="py-3 px-6 text-center border-b border-blue-200 w-16">No</th>
+                            <th class="py-3 px-6 border-b border-blue-200">Nama Siswa</th>
+                            <th class="py-3 px-6 text-center border-b border-blue-200">Skor Terakhir</th>
+                            <th class="py-3 px-6 text-center border-b border-blue-200">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rekap-tbody" class="text-gray-700 text-sm md:text-base">
+                        <!-- Data Tabel akan di-generate via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-green-800 text-white text-center py-6 mt-12 print:hidden">
+        <p>&copy; 2026 SD Negeri 60 Prabumulih - Sistem Kuis Terintegrasi Cloud Storage</p>
+    </footer>
+
+    <!-- MODALS -->
+    <div id="alert-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center print:hidden">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-sm w-full text-center border-t-8 border-yellow-400">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Pilih Nama!</h3>
+            <p id="alert-msg" class="mb-8 text-gray-600">Silakan pilih nama siswa terlebih dahulu dari daftar yang tersedia.</p>
+            <button onclick="window.closeAlert()" class="bg-yellow-400 text-yellow-900 px-8 py-3 rounded-xl font-bold hover:bg-yellow-500 transition w-full">Mengerti</button>
+        </div>
+    </div>
+
+    <div id="confirm-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center print:hidden">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-sm w-full text-center border-t-8 border-red-500">
+            <h3 class="text-2xl font-bold text-red-600 mb-2">Hapus Semua Data?</h3>
+            <p class="mb-8 text-gray-600">Apakah Anda yakin? Seluruh data nilai akan dihapus secara permanen dari server.</p>
+            <div class="flex justify-center gap-4">
+                <button onclick="window.closeConfirmClear()" class="bg-gray-200 text-gray-800 px-4 py-3 rounded-xl font-bold hover:bg-gray-300 transition flex-1">Batal</button>
+                <button onclick="window.executeClearRekap()" class="bg-red-600 text-white px-4 py-3 rounded-xl font-bold hover:bg-red-700 transition flex-1">Ya, Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIKA JAVASCRIPT (MODUL) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const bankSoal = [
+            { q: "Tangga nada yang memiliki 7 nada pokok disebut tangga nada...", options: ["Pentatonis", "Diatonis", "Kromatis", "Slendro"], answer: 1 },
+            { q: "Jarak nada (interval) 1 - 1 - ½ - 1 - 1 - 1 - ½ adalah ciri dari tangga nada...", options: ["Diatonis Minor", "Pentatonis Pelog", "Diatonis Mayor", "Kromatis"], answer: 2 },
+            { q: "Lagu bertangga nada mayor biasanya memiliki sifat...", options: ["Sedih dan syahdu", "Kurang bersemangat", "Mencekam", "Riang gembira dan bersemangat"], answer: 3 },
+            { q: "Tangga nada diatonis minor biasanya diawali dan diakhiri dengan nada...", options: ["Do", "Mi", "Fa", "La"], answer: 3 },
+            { q: "Berikut ini yang merupakan contoh lagu bertangga nada minor adalah...", options: ["Hari Merdeka", "Gugur Bunga", "Garuda Pancasila", "Halo-Halo Bandung"], answer: 1 },
+            { q: "Lagu 'Garuda Pancasila' menggunakan jenis tangga nada...", options: ["Mayor", "Minor", "Pelog", "Slendro"], answer: 0 },
+            { q: "Alat musik yang berfungsi untuk menghasilkan rangkaian melodi nada disebut alat musik...", options: ["Ritmis", "Melodis", "Harmonis", "Perkusi"], answer: 1 },
+            { q: "Jarak nada (interval) pada tangga nada diatonis minor adalah...", options: ["1 - 1 - ½ - 1 - 1 - 1 - ½", "1 - ½ - 1 - 1 - ½ - 1 - 1", "1 - 1 - 1 - ½ - 1 - 1 - ½", "½ - 1 - 1 - ½ - 1 - 1 - 1"], answer: 1 },
+            { q: "Alat musik pianika dimainkan dengan cara...", options: ["Dipukul dan ditekan", "Ditiup dan dipetik", "Ditiup dan ditekan", "Digesek dan ditiup"], answer: 2 },
+            { q: "Saat bermain recorder, posisi tangan yang benar adalah...", options: ["Tangan kanan di atas, tangan kiri di bawah", "Tangan kiri di atas, tangan kanan di bawah", "Boleh bebas asalkan nyaman", "Kedua tangan di tengah"], answer: 1 },
+            { q: "Pada pianika, tuts berwarna hitam digunakan untuk memainkan nada...", options: ["Nada pokok", "Nada tinggi", "Nada rendah", "Nada kromatis (kres/mol)"], answer: 3 },
+            { q: "Agar suara recorder terdengar jernih dan tidak pecah, cara meniupnya harus...", options: ["Sangat kuat", "Terputus-putus", "Lembut dan rata", "Sambil bernyanyi"], answer: 2 },
+            { q: "Jika ada lubang pada recorder yang tidak tertutup rapat saat ditiup, akibatnya adalah...", options: ["Suara menjadi lebih merdu", "Nada yang dihasilkan sumbang/bocor", "Recorder akan rusak", "Suara menjadi lebih keras"], answer: 1 },
+            { q: "Jari tangan yang bertugas menekan tuts-tuts pianika adalah...", options: ["Tangan kiri saja", "Tangan kanan dan kiri", "Tangan kanan saja", "Hanya ibu jari dan telunjuk"], answer: 2 },
+            { q: "Tangga nada diatonis mayor biasanya diawali dan diakhiri dengan nada...", options: ["Do", "Re", "Sol", "La"], answer: 0 },
+            { q: "Alat musik melodis di bawah ini yang hanya perlu ditiup (tanpa ditekan tuts) adalah...", options: ["Pianika", "Gitar", "Recorder", "Drum"], answer: 2 },
+            { q: "Lagu yang menceritakan kesedihan atau rasa syukur biasanya menggunakan tangga nada...", options: ["Mayor", "Minor", "Cepat", "Keras"], answer: 1 },
+            { q: "Saat menekan tuts angka 1 pada pianika, jari yang sebaiknya digunakan adalah...", options: ["Jari kelingking", "Jari manis", "Ibu jari (Jempol)", "Jari tengah"], answer: 2 },
+            { q: "Bagian jari yang paling tepat untuk menutup lubang recorder adalah...", options: ["Kuku jari", "Pangkal jari", "Daging ujung jari", "Telapak tangan"], answer: 2 },
+            { q: "Memainkan alat musik melodis memerlukan ... yang tepat agar perpindahan nada lancar.", options: ["Penjarian", "Pukulan", "Tendangan", "Tepukan"], answer: 0 },
+            { q: "Cepat lambatnya sebuah lagu dinyanyikan disebut dengan...", options: ["Irama", "Birama", "Tempo", "Melodi"], answer: 2 },
+            { q: "Tanda tempo Allegro memberikan petunjuk bahwa lagu harus dinyanyikan dengan...", options: ["Sangat lambat", "Sedang", "Sedih", "Cepat"], answer: 3 },
+            { q: "Alat musik ritmis berfungsi utama untuk...", options: ["Membentuk melodi lagu", "Mengatur irama dan ketukan", "Mengiringi lagu sedih", "Meniupkan nada tinggi"], answer: 1 },
+            { q: "Di bawah ini yang merupakan contoh alat musik ritmis adalah...", options: ["Gitar dan Piano", "Triangle dan Marakas", "Pianika dan Recorder", "Biola dan Suling"], answer: 1 },
+            { q: "Alat musik yang dapat menghasilkan paduan nada atau akord disebut alat musik...", options: ["Harmonis", "Melodis", "Ritmis", "Perkusi"], answer: 0 },
+            { q: "Notasi balok yang berbentuk seperti huruf 'd' (kepala not kosong dengan tiang) disebut not...", options: ["Penuh", "Setengah (1/2)", "Seperempat (1/4)", "Seperdelapan (1/8)"], answer: 1 },
+            { q: "Angka 0 (nol) pada partitur notasi angka melambangkan...", options: ["Nada sangat rendah", "Nada paling tinggi", "Tanda diam atau istirahat", "Lagu selesai"], answer: 2 },
+            { q: "Pencipta lagu kebangsaan Indonesia Raya adalah...", options: ["C. Simanjuntak", "Ismail Marzuki", "W.R. Supratman", "Ibu Sud"], answer: 2 },
+            { q: "Garis-garis tempat meletakkan notasi balok yang terdiri dari 5 garis horizontal disebut...", options: ["Garis Birama", "Garis Paranada", "Garis Kunci", "Garis Melodi"], answer: 1 },
+            { q: "Alat musik Triangle dimainkan dengan cara...", options: ["Dipetik", "Ditiup", "Digesek", "Dipukul"], answer: 3 }
+        ];
+
+        const studentsList = [
+            "AFGAN DAYI ALFATH", "AIVINA LATIFAH PUTRY", "ALBAR", "ALDIO DWI RIYANSYAH",
+            "ASHCILLA ZALZABILA", "Astama Satriadi Basya", "DIKI SAPUTRA PRATAMA",
+            "FEBIOLA RAMADHANI", "LAVERO RAYYAN YUDHISTYRA", "M ALBI PRATAMA",
+            "NADA FARA MAULIDA", "NOVISTA CHICILIA HZ", "RAPAEL DEARDO PRATAMA",
+            "RENA TASYA", "REVALDO HERLIAN PRATAMA", "SATRIA ANUGRAH PRATAMA",
+            "SELVA CARESTIA", "SULTHAN MUHAROM BILL AZZAM", "VAHIRAN SYAFIRAH",
+            "SEFRI ANGGESTA PRATAMA"
+        ];
+
+        let currentQuestions = [];
+        let currentQuestionStrings = []; 
+        let totalBenar = 0;
+        let totalSalah = 0;
+        let totalTerjawab = 0;
+        let rekapNilai = {};
+
+        // Inisialisasi Firebase Cloud Storage
+        let db, auth, userDocRef;
+        let currentUser = null;
+        let isOnline = false;
+
+        try {
+            const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+            const app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+            const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+            
+            userDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'rekapNilai', 'kelas6_SDN60');
+
+            const initAuth = async () => {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            };
+
+            initAuth();
+
+            onAuthStateChanged(auth, (user) => {
+                currentUser = user;
+                if (user) {
+                    isOnline = true;
+                    document.getElementById('cloud-status').innerHTML = "☁️ Tersinkronisasi (Online)";
+                    document.getElementById('cloud-status').classList.replace("bg-green-800", "bg-blue-600");
+                    document.getElementById('cloud-status').classList.replace("text-green-200", "text-white");
+
+                    onSnapshot(userDocRef, (docSnap) => {
+                        if (docSnap.exists()) {
+                            rekapNilai = docSnap.data().records || {};
+                        } else {
+                            initializeDefaultRekap();
+                        }
+                        renderRekapTable();
+                    }, (error) => {
+                        console.error("Firestore error:", error);
+                    });
+                }
+            });
+        } catch(e) {
+            console.warn("Mode Offline aktif. Menyimpan di penyimpanan lokal browser.");
+            document.getElementById('cloud-status').innerHTML = "💾 Mode Offline (Lokal)";
+            document.getElementById('cloud-status').classList.replace("bg-green-800", "bg-gray-600");
+            loadLocalRekap();
+        }
+
+        function initializeDefaultRekap() {
+            const prefilledData = {
+                "AFGAN DAYI ALFATH": { score: 80, status: "TUNTAS", pastQuestions: [] },
+                "AIVINA LATIFAH PUTRY": { score: 80, status: "TUNTAS", pastQuestions: [] },
+                "ALBAR": { score: 90, status: "TUNTAS", pastQuestions: [] },
+                "ALDIO DWI RIYANSYAH": { score: 60, status: "REMEDIAL", pastQuestions: [] },
+                "ASHCILLA ZALZABILA": { score: 80, status: "TUNTAS", pastQuestions: [] },
+                "DIKI SAPUTRA PRATAMA": { score: 70, status: "TUNTAS", pastQuestions: [] },
+                "FEBIOLA RAMADHANI": { score: 60, status: "REMEDIAL", pastQuestions: [] }
+            };
+
+            studentsList.forEach(student => {
+                if(!rekapNilai[student]) {
+                    if (prefilledData[student]) {
+                        rekapNilai[student] = prefilledData[student];
+                    } else {
+                        rekapNilai[student] = { score: '-', status: 'Belum Mengerjakan', pastQuestions: [] };
+                    }
+                }
+            });
+        }
+
+        function loadLocalRekap() {
+            const savedData = localStorage.getItem('rekapSeniMusik6');
+            if (savedData) {
+                rekapNilai = JSON.parse(savedData);
+            } else {
+                initializeDefaultRekap();
+            }
+            renderRekapTable();
+        }
+
+        const selectEl = document.getElementById('student-select');
+        studentsList.forEach(student => {
+            const opt = document.createElement('option');
+            opt.value = student;
+            opt.innerText = student;
+            selectEl.appendChild(opt);
+        });
+
+        // Tampilkan Tabel Rekap dengan Tombol Klik Langsung
+        function renderRekapTable() {
+            const tbody = document.getElementById('rekap-tbody');
+            tbody.innerHTML = ''; 
+            
+            studentsList.forEach((student, index) => {
+                const data = rekapNilai[student] || { score: '-', status: 'Belum Mengerjakan' };
+                const tr = document.createElement('tr');
+                tr.className = 'border-b hover:bg-gray-50 transition print:border-b-2 print:border-gray-200';
+                
+                let statusColor = 'text-gray-400 italic'; 
+                let nameCell = `<span class="font-medium text-gray-800">${student}</span>`; // Tampilan default (Lulus)
+
+                if (data.status === 'TUNTAS') {
+                    statusColor = 'text-green-600 font-bold';
+                    nameCell = `<span class="font-bold text-gray-800">${student}</span> <span class="text-xs ml-2 text-green-500 print:hidden">✔️</span>`;
+                } 
+                else if (data.status === 'REMEDIAL') {
+                    statusColor = 'text-red-600 font-bold';
+                    // Buat Nama bisa diklik khusus untuk Remedial
+                    nameCell = `
+                        <button onclick="window.startQuiz('${student}')" class="text-left w-full group print:hidden">
+                            <span class="font-bold text-red-600 group-hover:underline">${student}</span>
+                            <span class="ml-2 inline-block bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-red-300 shadow-sm animate-pulse">KLIK UNTUK MENGULANG 🔄</span>
+                        </button>
+                        <span class="hidden print:inline font-bold text-red-600">${student}</span>
+                    `;
+                }
+                else { // Belum Mengerjakan
+                    // Buat Nama bisa diklik khusus untuk yang belum mulai
+                    nameCell = `
+                        <button onclick="window.startQuiz('${student}')" class="text-left w-full group print:hidden">
+                            <span class="font-bold text-blue-600 group-hover:underline">${student}</span>
+                            <span class="ml-2 inline-block bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-blue-300 shadow-sm">MULAI KUIS ✏️</span>
+                        </button>
+                        <span class="hidden print:inline font-medium text-gray-800">${student}</span>
+                    `;
+                }
+                
+                let scoreDisplay = data.score === '-' ? '-' : data.score;
+
+                tr.innerHTML = `
+                    <td class="py-3 px-6 text-center">${index + 1}</td>
+                    <td class="py-3 px-6">${nameCell}</td>
+                    <td class="py-3 px-6 text-center font-bold text-lg">${scoreDisplay}</td>
+                    <td class="py-3 px-6 text-center ${statusColor}">${data.status}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function shuffleArray(array) {
+            let shuffled = array.slice();
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // FUNGSI UTAMA KUIS (Diperbarui agar bisa menerima nama langsung dari tabel)
+        window.startQuiz = function(directStudentName) {
+            let selectedStudent = directStudentName;
+            
+            // Jika dipanggil dari tombol utama "Mulai Kuis Sekarang" (bukan string dari tabel)
+            if (typeof directStudentName !== 'string') {
+                const selectEl = document.getElementById('student-select');
+                selectedStudent = selectEl.value;
+            }
+
+            if (!selectedStudent) {
+                document.getElementById('alert-modal').classList.remove('hidden');
+                return;
+            }
+
+            // Atur UI
+            document.getElementById('setup-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            document.getElementById('active-student-name').innerText = selectedStudent;
+            document.getElementById('status-container').classList.add('hidden');
+            
+            // Sinkronkan nama di dropdown jika diklik dari tabel
+            document.getElementById('student-select').value = selectedStudent;
+
+            totalBenar = 0;
+            totalSalah = 0;
+            totalTerjawab = 0;
+            updateScoreUI();
+
+            // LOGIKA SOAL REMEDIAL
+            const studentData = rekapNilai[selectedStudent] || { score: '-', status: 'Belum', pastQuestions: [] };
+            let availableQuestions = [...bankSoal];
+            const badge = document.getElementById('remedial-badge');
+
+            if (studentData.status === 'REMEDIAL' && studentData.pastQuestions && studentData.pastQuestions.length > 0) {
+                // Filter: Buang soal yang sebelumnya sudah pernah dijawab!
+                availableQuestions = bankSoal.filter(q => !studentData.pastQuestions.includes(q.q));
+                badge.classList.remove('hidden'); // Tampilkan badge khusus Remedial
+                
+                if(availableQuestions.length < 10) {
+                    availableQuestions = [...bankSoal];
+                }
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            // Ambil 10 Soal Acak
+            currentQuestions = shuffleArray(availableQuestions).slice(0, 10);
+            currentQuestionStrings = currentQuestions.map(q => q.q);
+
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = ''; 
+            
+            currentQuestions.forEach((qObj, qIndex) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'p-6 bg-white rounded-2xl border-2 border-gray-200 shadow-md transition-all';
+                
+                const questionTitle = document.createElement('h3');
+                questionTitle.className = 'text-xl font-bold text-gray-800 mb-6';
+                questionTitle.innerText = `${qIndex + 1}. ${qObj.q}`;
+                questionDiv.appendChild(questionTitle);
+
+                const optionsGrid = document.createElement('div');
+                optionsGrid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
+
+                qObj.options.forEach((optText, optIndex) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'text-left p-4 rounded-xl border-2 border-gray-300 bg-gray-50 text-lg hover:bg-blue-50 transition-colors duration-200 font-medium text-gray-700 flex items-center option-btn-' + qIndex;
+                    btn.innerHTML = `<span class="shrink-0 inline-flex items-center justify-center w-10 h-10 bg-gray-200 text-gray-700 rounded-full mr-4 font-bold text-xl">${String.fromCharCode(65 + optIndex)}</span> <span>${optText}</span>`;
+                    
+                    btn.onclick = () => window.checkAnswer(btn, qIndex, optIndex, qObj.answer, questionDiv);
+                    optionsGrid.appendChild(btn);
+                });
+
+                questionDiv.appendChild(optionsGrid);
+                container.appendChild(questionDiv);
+            });
+
+            document.getElementById('kuis').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.checkAnswer = function(clickedBtn, qIndex, selectedOpt, correctOpt, cardDiv) {
+            const allBtns = document.querySelectorAll('.option-btn-' + qIndex);
+            allBtns.forEach(btn => btn.classList.add('disabled'));
+
+            if (selectedOpt === correctOpt) {
+                clickedBtn.classList.add('correct');
+                cardDiv.classList.add('border-green-400', 'bg-green-50');
+                totalBenar++;
+            } else {
+                clickedBtn.classList.add('wrong');
+                allBtns[correctOpt].classList.add('correct');
+                cardDiv.classList.add('border-red-400', 'bg-red-50');
+                totalSalah++;
+            }
+
+            totalTerjawab++;
+            updateScoreUI();
+
+            if (totalTerjawab === 10) {
+                showFinalStatus();
+            }
+        }
+
+        function updateScoreUI() {
+            document.getElementById('answered-count').innerText = `${totalTerjawab} / 10`;
+            document.getElementById('score-benar').innerText = totalBenar;
+            document.getElementById('score-salah').innerText = totalSalah;
+            document.getElementById('score-total').innerText = totalBenar * 10;
+        }
+
+        function showFinalStatus() {
+            const finalScore = totalBenar * 10;
+            const statusContainer = document.getElementById('status-container');
+            const statusText = document.getElementById('status-text');
+            const studentName = document.getElementById('active-student-name').innerText;
+
+            statusContainer.classList.remove('hidden');
+            let finalStatus = "";
+
+            if (finalScore >= 70) {
+                statusContainer.className = 'py-3 px-4 rounded-xl font-extrabold text-3xl shadow-lg mt-6 bg-green-500 text-white animate-pulse';
+                statusText.innerText = "🎉 LULUS / TUNTAS";
+                finalStatus = "TUNTAS";
+            } else {
+                statusContainer.className = 'py-3 px-4 rounded-xl font-extrabold text-3xl shadow-lg mt-6 bg-red-500 text-white animate-pulse';
+                statusText.innerText = "⚠️ REMEDIAL";
+                finalStatus = "REMEDIAL";
+            }
+
+            // SIMPAN DATA KE CLOUD / LOKAL (Beserta history soal)
+            rekapNilai[studentName] = { 
+                score: finalScore, 
+                status: finalStatus,
+                pastQuestions: currentQuestionStrings 
+            };
+
+            if (isOnline && currentUser) {
+                setDoc(userDocRef, { records: rekapNilai }, { merge: true });
+            } else {
+                localStorage.setItem('rekapSeniMusik6', JSON.stringify(rekapNilai));
+                renderRekapTable();
+            }
+        }
+
+        // FUNGSI BANTUAN UI (Modal & Navigasi)
+        window.resetApp = function() {
+            document.getElementById('setup-screen').classList.remove('hidden');
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('student-select').value = ""; 
+            
+            // Otomatis menggulir ke Tabel Rekap Nilai agar hasil terlihat langsung
+            document.getElementById('rekap').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.closeAlert = function() {
+            document.getElementById('alert-modal').classList.add('hidden');
+        }
+
+        window.openConfirmClear = function() {
+            document.getElementById('confirm-modal').classList.remove('hidden');
+        }
+
+        window.closeConfirmClear = function() {
+            document.getElementById('confirm-modal').classList.add('hidden');
+        }
+
+        window.executeClearRekap = function() {
+            initializeDefaultRekap(); // Kosongkan data di memory
+
+            if (isOnline && currentUser) {
+                setDoc(userDocRef, { records: rekapNilai }, { merge: true });
+            } else {
+                localStorage.removeItem('rekapSeniMusik6');
+                renderRekapTable();
+            }
+            
+            window.closeConfirmClear();
+        }
+
+    </script>
+</body>
+</html>
